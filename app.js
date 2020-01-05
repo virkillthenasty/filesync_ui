@@ -3,16 +3,17 @@ const colorScale = d3.scaleOrdinal()
 .domain(['blue','green','yellow','red','grey'])
 .range(["#00A8F0","#05EC9C",'#F5A623','#FF004B','#AAAAAF'])
 
-
+const statusScale = d3.scaleOrdinal()
+.domain(['blue','green','yellow','red','grey'])
+.range(["Normal","Proceeding",'Warning','Error','Disconected'])
 
 ///////////////////////////////////////////////////
 
-
 var svg = d3.select('#graph'),
-    w = +svg.attr('width')*1.1
-    h = +svg.attr('height')*1.1 ;
+    w = +svg.attr('width')*0.9
+    h = +svg.attr('height')*0.9 ;
 
-//var color = d3.scaleOrdinal(['blue','green', 'orange']);
+var chart = d3.select('#chart')
 
 
 const rootpos = {"x":w/2, "y":h/2} // 중심 위치
@@ -22,7 +23,7 @@ const nodepos = {"x":h/10, "y":h/10}
 const child_posx =(d)=>{
 
 }
-
+///////////////////////////////////////////////////
 // giv pos for id
 const posx =(d)=> {
     if(d.id === '0'){ return rootpos['x']} 
@@ -40,6 +41,54 @@ const posy =(d)=> {
 }
 
 
+const status = ['blue','green','yellow','red','grey']
+const renderChart=(selection, data) =>{
+    const aggs = selection.selectAll('.agg').data(data)
+    aggs.enter().append('circle')
+                .attr('class','.agg')
+                .attr('cx',(d,i)=>i*(75)+55)
+                .attr('cy',36)
+                .attr('r', 20)
+                .attr('fill','#282F43')
+                .attr("stroke-width","2px")
+                .attr("stroke",(d)=>{return colorScale(d)})
+
+    const aggs2 = selection.selectAll('.chartsubtitle').data(data)
+        aggs2.enter().append('text')
+                    .attr('class','.chartsubtitle')
+                    .text(d=>{return statusScale(d)})
+                    .attr('x',(d,i)=>i*(75)+55)
+                    .attr('y',72)
+                    .attr('fill','#AAB0C1')
+                    .attr("text-anchor", "middle")
+                    .attr("font-size",'10px')
+                    .attr('font-family','Noto Sans KR')
+
+    aggs.exit().remove()
+    aggs2.exit().remove()
+}
+
+renderChart(chart, status)
+
+
+const renderChartNum=(selection, data) =>{
+
+    const aggs = selection.selectAll('.chartData').data(data)
+        aggs.enter().append('text')
+                    .attr('class','.chartData')
+                    .text('00')
+                    .attr('x',(d,i)=>i*(75)+55)
+                    .attr('y',42)
+                    .attr('fill','#FFFFFF')
+                    .attr("text-anchor", "middle")
+                    .attr("font-size",'16px')
+                    .attr('font-family','Noto Sans KR')
+
+    aggs.exit().remove()
+}
+renderChartNum(chart, status)
+
+///////////////////////////////////////////////////
 const render = (selection,  data ) => {
     const lines =  selection.selectAll('.line').data(data)                   
     lines.enter().append('line')
@@ -121,3 +170,6 @@ d3.json('./node_change.json',function(data){
         render(svg, data[0])
     }, 6000)
 })
+
+
+///////////////////////////////////////////////////
