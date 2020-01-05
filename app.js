@@ -1,7 +1,7 @@
 //color scale
 const colorScale = d3.scaleOrdinal()
 .domain(['blue','green','yellow','red','grey'])
-.range(["#00A8F0","#05EC9C",'yellow','red','grey'])
+.range(["#00A8F0","#05EC9C",'#F5A623','#FF004B','#AAAAAF'])
 
 
 
@@ -38,59 +38,6 @@ const posy =(d)=> {
     else if(d.id.length === 1 ){ return centerpos['y'][d.id*1-1]}
     else {return d.y}
 }
-
-
-//const c1r = center1.attr('r')*1
-
-
-var color = '#00A8F0'
-
-// d3.interval(function(){
-//     update(color);
-// }, 1000)
-
-// const update=(color)=>{
-//     var t = d3.transition().duration(1000).delay(1000);
-//     for(i in [0,1,2]){
-
-//         var line = svg.append('line')
-//                     .attr('x1',rootpos.x)
-//                     .attr('x2',centerpos.x[i])
-//                     .attr('y1',rootpos.y)
-//                     .attr('y2',centerpos.y[i])
-//                     .attr('stroke', color )
-//                     .attr('stroke-width',2)
-    
-//         var center = svg.append('circle')
-//                         .attr('class','center')
-//                         .attr('r',35)
-//                         .attr('cx',centerpos.x[i])
-//                         .attr('cy',centerpos.y[i])
-//                         .attr("fill-opacity","1")
-//                         .attr("fill"," #1D2331")
-//                         .attr("stroke",color)
-//                         .attr("stroke-width","5px")
-
-                    
-//         var img = svg.append("svg:image")
-//                         .attr('class','icon')
-//                         .attr("xlink:href", (color ==="#05EC9C") ? 'node1.svg': 'node0.svg' )
-//                         .attr("x", centerpos.x[i]-21)
-//                         .attr("y", centerpos.y[i]-14.5)
-//                         .attr("width", "42")
-
-
-//         var labels = svg.style("fill", "#FFE6F0")
-//                             .append("text")
-//                             .attr('x', centerpos.x[i])
-//                             .attr('y', centerpos.y[i]+60)
-//                             .text("Center")
-//                             .attr("text-anchor", "middle")
-//                             .attr("width", "42")
-//                             .attr("height", "15");
-        
-//     }
-// }
 
 
 const render = (selection,  data ) => {
@@ -131,15 +78,25 @@ const render = (selection,  data ) => {
                         .attr("xlink:href", d=>{if(d.status ==="blue"){return './node0.svg'}
                         else{return './node1.svg'} })
 
+    const labels =  selection.selectAll('.label').data(data)  
+    labels.enter().append("text")
+                        .attr('class','label')
+                        .merge(labels)
+                        .style("fill", "#ffffff")
+                        .attr('x',(d)=>{console.log('text')
+                            return centerpos.x[d.id]})
+                        .attr('y',(d)=>centerpos.y[d.id]+60)
+                            .text((d)=>d.name)
+                            .attr("text-anchor", "middle")
+                            .attr("width", "42")
+                            .attr("height", "15")
+                            
+
     
     centers.exit().remove()
     imgs.exit().remove()
     lines.exit().remove()
-
-
-
-
-
+    labels.exit().remove()
 
 }
 
@@ -164,34 +121,3 @@ d3.json('./node_change.json',function(data){
         render(svg, data[0])
     }, 6000)
 })
-
-
-
-
-// setTimeout(()=>{
-//     centers = centers.filter((d,i)=> i!==0);
-//     render(svg, centers)
-//     console.log(centers)
-// },
-// 1000)
-
-// // setTimeout(()=>{
-// //     centers.push(makecenter('p_center'))
-// //     render(svg, centers)},
-// // 6000)
-
-// setTimeout(()=>{
-//     centers[2].type = 'c_node'
-//     render(svg, centers)
-//     console.log(centers)
-// },
-// 2000)
-
-// /// Replace lemon with
-// setTimeout(()=>{
-//     centers = centers.filter((d,i)=> i!==1);
-//     render(svg, centers)
-//     console.log('pop')
-//     console.log(centers)
-// },
-// 3000)
