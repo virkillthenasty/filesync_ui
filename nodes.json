@@ -1,0 +1,31 @@
+{
+    "nodes": [
+      {"id": "0", "name":"", "parent":"", "type":"", "status":"red"},
+      {"id": "1", "name":"Center01", "parent":"root", "type":"center", "status":"blue"},
+      {"id": "2", "name":"Center02", "parent":"root", "type":"center", "status":"blue"},
+      {"id": "3", "name":"Center03", "parent":"root", "type":"center", "status":"blue"},
+      {"id": "11", "name":"Node1_1", "parent":"1", "type":"node", "status":"grey"},
+      {"id": "12", "name":"Node1_2", "parent":"1", "type":"node", "status":"grey"},
+      {"id": "13", "name":"Node1_1", "parent":"1", "type":"node", "status":"grey"},
+      {"id": "21", "name":"Node2_1", "parent":"2", "type":"node", "status":"grey"},
+      {"id": "22", "name":"Node2_2", "parent":"2", "type":"node", "status":"grey"},
+      {"id": "23", "name":"Node2_3", "parent":"2", "type":"node", "status":"grey"},
+      {"id": "31", "name":"Node3_1", "parent":"3", "type":"node", "status":"green"},
+      {"id": "32", "name":"Node3_2", "parent":"3", "type":"node", "status":"grey"},
+      {"id": "33", "name":"Node3_3", "parent":"3", "type":"node", "status":"grey"}
+    ],
+    "links": [
+      {"source": "0", "target": "1", "value": 1},
+      {"source": "0", "target": "2", "value": 1},
+      {"source": "0", "target": "3", "value": 1},
+      {"source": "1", "target": "11", "value": 1},
+      {"source": "1", "target": "12", "value": 1},
+      {"source": "1", "target": "13", "value": 1},
+      {"source": "2", "target": "21", "value": 1},
+      {"source": "2", "target": "22", "value": 1},
+      {"source": "2", "target": "23", "value": 1},
+      {"source": "3", "target": "31", "value": 1},
+      {"source": "3", "target": "33", "value": 1},
+      {"source": "3", "target": "32", "value": 1}
+    ]
+  }

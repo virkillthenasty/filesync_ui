@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>nodes</title>
+   
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <style>
+    @import url(http://fonts.googleapis.com/earlyaccess/notosanskr.css);    
+    html{height: 100%;
+        width: 100%;}
+    body{
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100%;
+    background-color: #1D2331;
+    background-size: 15px 15px;
+    background-image: radial-gradient(circle, #090F25 1px, rgba(0, 0, 0, 0) 1px);
+    }
+    svg{
+    
+    }
+    
+    .gnb{
+    display: flex;
+    background-color: #FFFFFF;
+    flex:1;
+    height: 70px;
+    align-items: center;
+    }
+    .subtitle{
+    margin-left: 30px;
+    font-size: 16px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 500;
+    }
+    .icon{
+    background-image: url(./node1.svg);
+    }
+    /* .icon:hover {
+    fill:#FF004B;
+    opacity: 0.35;
+    }
+    .center:hover{
+    fill:#FF004B;
+    opacity: 0.35;
+    } */
+    .contents{
+    flex:1;
+    }
+    .lnb{
+    display: flex;
+    flex-basis: 240px;
+    height: 100%;
+    background: #22283A;
+    flex-direction: column;
+
+    }
+    .title{
+    font-size: 24px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 700;
+    color: white;
+    margin-left: 30px;
+    margin-top: 20px;
+    }
+    .btn{
+    font-size: 14px;
+    font-family: 'Noto Sans KR', sans-serif;
+    font-weight: 300;
+    color: white;
+    margin-top: 20px;
+    height:49px ;
+    width: 100%;
+    }
+    .btn:hover{
+    color: white;
+    background-color: #4C6E91;
+    }
+    </style>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+</head>
+<body >
+    <div class='lnb'>
+        <text class="title">
+            FileSync
+        </text>
+        <button class="btn">Overview</button>
+        <button class="btn">Monitoring</button>
+        <button class="btn">Files</button>
+        <button class="btn">Logs</button>
+        <button class="btn">System Setting</button>
+    </div>
+    <div class = 'contents'>
+        <div class = 'gnb'> 
+            <text class="subtitle">
+                Monitoring
+            </text>
+        </div>
+        <svg id='graph' width="1126" height="800"></svg>
+        
+    </div>
+
+    </div>
+</body>
+<script type="" src="app.js"></script>
+</html>

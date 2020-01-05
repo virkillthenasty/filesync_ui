@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="45px" height="31px" viewBox="0 0 45 31" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 61.2 (89653) - https://sketch.com -->
+    <title>filesync/node1</title>
+    <desc>Created with Sketch.</desc>
+    <g id="filesync/node1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path d="M44,13 C44.5522847,13 45,13.4477153 45,14 L45,26 C45,26.5522847 44.5522847,27 44,27 L42,27 L42,30 C42,30.5522847 41.5522847,31 41,31 L4,31 C3.44771525,31 3,30.5522847 3,30 L3,27 L1,27 C0.44771525,27 6.76353751e-17,26.5522847 0,26 L0,14 C-6.76353751e-17,13.4477153 0.44771525,13 1,13 L44,13 Z M41,27 L4,27 L4,29.5 C4,29.7761424 4.22385763,30 4.5,30 L4.5,30 L40.5,30 C40.7761424,30 41,29.7761424 41,29.5 L41,29.5 L41,27 Z M40,17 L36,17 L36,19 L35,19 L35,23 L41,23 L41,19 L40,19 L40,17 Z M30,17 L26,17 L26,19 L25,19 L25,23 L31,23 L31,19 L30,19 L30,17 Z M20,17 L16,17 L16,19 L15,19 L15,23 L21,23 L21,19 L20,19 L20,17 Z M10,17 L6,17 L6,19 L5,19 L5,23 L11,23 L11,19 L10,19 L10,17 Z M41,5.5 L45,8 L41,10.5 L41,8.5 L1,8.5 L1,7.5 L41,7.5 L41,5.5 Z M4.5,0.5 L4.5,2.5 L45,2.5 L45,3.5 L4.499,3.5 L4.5,5.5 L0.5,3 L4.5,0.5 Z" id="Combined-Shape" fill="#05EC9C" fill-rule="nonzero"></path>
+        <g id="Group"></g>
+    </g>
+</svg>

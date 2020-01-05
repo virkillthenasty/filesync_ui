@@ -1,0 +1,17 @@
+{
+    "0": [
+      {"id": 0, "name":"Center01", "parent":"root", "type":"center", "status":"blue"},
+      {"id": 1, "name":"Center02", "parent":"root", "type":"center", "status":"blue"},
+      {"id": 2, "name":"Center03", "parent":"root", "type":"center", "status":"blue"}
+    ],
+    "1": [
+      {"id": 0, "name":"Center01", "parent":"root", "type":"center", "status":"blue"},
+      {"id": 1, "name":"Center02", "parent":"root", "type":"center", "status":"blue"},
+      {"id": 2, "name":"Center03", "parent":"root", "type":"center", "status":"green"}
+    ],
+    "2": [
+      {"id": 0, "name":"Center01", "parent":"root", "type":"center", "status":"green"},
+      {"id": 1, "name":"Center02", "parent":"root", "type":"center", "status":"green"},
+      {"id": 2, "name":"Center03", "parent":"root", "type":"center", "status":"green"}
+    ]
+  }
